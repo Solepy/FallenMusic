@@ -34,7 +34,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @sudo_users_only
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="__ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ sᴏ ɪ ᴡɪʟʟ ᴛʀʏ ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ɪᴛ.__")
+        return await edit_or_reply(message, text="__Dammi qualche testo da eseguire.__")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -79,7 +79,7 @@ async def executor(client, message):
         )
         await message.reply_document(
             document=filename,
-            caption=f"**ɪɴᴩᴜᴛ:**\n`{cmd[0:980]}`\n\n**ᴏᴜᴛᴩᴜᴛ:**\n`ᴀᴛᴛᴀᴄʜᴇᴅ ᴅᴏᴄᴜᴍᴇɴᴛ`",
+            caption=f"**ɪɴᴩᴜᴛ:**\n`{cmd[0:980]}`\n\n**output:**\n`documento attached`",
             quote=False,
             reply_markup=keyboard,
         )
@@ -109,7 +109,7 @@ async def runtime_func_cq(_, cq):
 @sudo_users_only
 async def shellrunner(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="**usage:**\n\n/sh echo oni-chan")
+        return await edit_or_reply(message, text="**utilizzo:**\n\n/sh echo oni-chan")
     text = message.text.split(None, 1)[1]
     if "\n" in text:
         code = text.split("\n")
