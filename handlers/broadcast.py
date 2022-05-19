@@ -15,17 +15,17 @@ async def broadcast(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         return
     else:
-        wtf = await message.reply("`sᴛᴀʀᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ​ ʙᴀʙʏ...`")
+        wtf = await message.reply("Startando la broadcast")
         if not message.reply_to_message:
-            await wtf.edit("**__ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ​ ʙᴀʙʏ__**")
+            await wtf.edit("**__rispondi alla broadcast ALEALEALE**")
             return
         lmao = message.reply_to_message.text
         async for dialog in Anonymous.iter_dialogs():
             try:
                 await Anonymous.send_message(dialog.chat.id, lmao)
                 sent = sent+1
-                await wtf.edit(f"`ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...` \n\n**ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴛᴏ :** `{sent}` **ᴄʜᴀᴛs** \n**ꜰᴀɪʟᴇᴅ ɪɴ :** `{failed}` **ᴄʜᴀᴛs**")
+                await wtf.edit(f"`Broadcastando...` \n\n**Broadcastato a :** `{sent}` **chats** \n**fallato ALEALEALE :** `{failed}` **chats**")
                 await asyncio.sleep(0.3)
             except:
                 failed=failed+1
-        await message.reply_text(f"**ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ sᴜᴄᴄᴇssꜰᴜʟʟʏ** \n\n**ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴛᴏ :** `{sent}` **ᴄʜᴀᴛs** \n**ꜰᴀɪʟᴇᴅ ɪɴ​ :** `{failed}` **ᴄʜᴀᴛs**")
+        await message.reply_text(f"**Broadcastato con successo** \n\n**Broadcastato a :** `{sent}` **chats** \n**Fallato ALEALEALE :** `{failed}` **chats**")
